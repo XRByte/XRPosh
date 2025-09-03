@@ -1,0 +1,126 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "session-bg": "#073642",
+        "session-fg": "#93A1A1",
+        "shell-bg": "#002B36",
+        "shell-fg": "#EEE8D5",
+        "path-bg": "#268BD2",
+        "path-fg": "#002B36",
+        "git-bg": "#CB4B16",
+        "git-fg": "#FDF6E3",
+        "python-bg": "#859900",
+        "python-fg": "#FDF6E3",
+
+        "accent-1": "#B58900",
+        "accent-2": "#2AA198",
+        "accent-3": "#859900"
+    },
+    "blocks": [
+        {
+            "alignment": "left",
+            "type": "prompt",
+            "segments": [
+                {
+                    "type": "session",
+                    "background": "p:session-bg",
+                    "foreground": "p:session-fg",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "style": "diamond",
+                    "template": "{{ if .SSHSession }} {{ end }} {{ .UserName }}"
+                },
+                {
+                    "type": "shell",
+                    "background": "p:shell-bg",
+                    "foreground": "p:shell-fg",
+                    "style": "diamond",
+                    "trailing_diamond": "",
+                    "leading_diamond": "",
+                    "template": " {{ .Name }}",
+                    "properties": {
+                        "mapped_shell_names": {
+                            "pwsh": "PS",
+                            "zsh": "zsh",
+                            "bash": "bash"
+                        }
+                    }
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "template": " 󰜥 "
+                },
+                {
+                    "type": "path",
+                    "background": "p:path-bg",
+                    "foreground": "p:path-fg",
+                    "trailing_diamond": "",
+                    "leading_diamond": "",
+                    "style": "diamond",
+                    "properties": {
+                        "folder_icon": " 󰇘 ",
+                        "home_icon": " ",
+                        "style": "agnoster",
+                        "folder_separator_icon": ""
+                    },
+                    "template": "{{ .Path }}"
+                },
+                {
+                    "type": "git",
+                    "foreground": "p:accent-1",
+                    "style": "plain",
+                    "template": "  "
+                },
+                {
+                    "type": "git",
+                    "background": "p:git-bg",
+                    "foreground": "p:git-fg",
+                    "trailing_diamond": "",
+                    "leading_diamond": "",
+                    "properties": {
+                        "fetch_stash_count": true,
+                        "fetch_upstream_icon": true
+                    },
+                    "style": "diamond",
+                    "template": "{{ .HEAD }}{{ if gt .StashCount 0 }}\ueb4b {{ .StashCount }}{{ end }}"
+                },
+                {
+                    "type": "python",
+                    "foreground": "p:accent-2",
+                    "style": "plain",
+                    "template": " 󰜥 "
+                },
+                {
+                    "type": "python",
+                    "background": "p:python-bg",
+                    "foreground": "p:python-fg",
+                    "trailing_diamond": "",
+                    "leading_diamond": "",
+                    "style": "diamond",
+                    "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }} {{ .Venv }} {{ .Full }}{{ end }}{{ end }}",
+                    "properties": {
+                        "home_enabled": true,
+                        "display_mode": "always"
+                    }
+                }
+            ]
+        },
+        {
+            "alignment": "left",
+            "type": "prompt",
+            "newline": true,
+            "segments": [
+                {
+                    "foreground": "p:accent-3",
+                    "type": "text",
+                    "style": "plain",
+                    "template": " 󰜥 "
+                }
+            ]
+        }
+    ],
+
+    "final_space": true,
+    "version": 3
+}

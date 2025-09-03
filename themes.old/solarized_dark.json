@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "segments": [
+        {
+          "background": "#073642",
+          "foreground": "#93A1A1",
+          "leading_diamond": "",
+          "trailing_diamond": "",
+          "style": "diamond",
+          "template": "{{ if .SSHSession }} {{ end }} {{ .UserName }}",
+          "type": "session"
+        },
+        {
+          "type": "shell",
+          "background": "#002B36",
+          "foreground": "#EEE8D5",
+          "style": "diamond",
+          "trailing_diamond": "",
+          "leading_diamond": "",
+          "template": " {{ .Name }}",
+          "properties": {
+            "mapped_shell_names": {
+              "pwsh": "PS",
+              "zsh": "zsh",
+              "bash": "bash"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "style": "plain",
+          "template": " 󰜥 "
+        },
+        {
+          "type": "path",
+          "background": "#268BD2",
+          "foreground": "#002B36",
+          "trailing_diamond": "",
+          "leading_diamond": "",
+          "style": "diamond",
+          "properties": {
+            "folder_icon": " 󰇘 ",
+            "home_icon": " ",
+            "style": "agnoster",
+            "folder_separator_icon": ""
+          },
+          "template": "{{ .Path }}"
+        },
+        {
+          "type": "git",
+          "foreground": "#B58900",
+          "style": "plain",
+          "template": "  "
+        },
+        {
+          "type": "git",
+          "background": "#CB4B16",
+          "foreground": "#FDF6E3",
+          "trailing_diamond": "",
+          "leading_diamond": "",
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_upstream_icon": true
+          },
+          "style": "diamond",
+          "template": "{{ .HEAD }}{{ if gt .StashCount 0 }}\ueb4b {{ .StashCount }}{{ end }}"
+        },
+        {
+          "type": "python",
+          "foreground": "#2AA198",
+          "style": "plain",
+          "template": " 󰜥 "
+        },
+        {
+          "type": "python",
+          "background": "#859900",
+          "foreground": "#FDF6E3",
+          "trailing_diamond": "",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": "{{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }} {{ .Venv }} {{ .Full }}{{ end }}{{ end }}",
+          "properties": {
+            "home_enabled": true,
+            "display_mode": "always"
+          }
+        }
+      ]
+    },
+    {
+      "alignment": "left",
+      "type": "prompt",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#859900",
+          "type": "text",
+          "style": "plain",
+          "template": " 󰜥 "
+        }
+      ]
+    }
+  ],
+  "final_space": true,
+  "version": 3
+}

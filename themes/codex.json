@@ -1,0 +1,65 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "session-bg": "#073642",
+        "session-fg": "#93A1A1",
+        "path-bg": "#268BD2",
+        "path-fg": "#002B36",
+        "git-bg": "#CB4B16",
+        "git-fg": "#FDF6E3",
+        "python-bg": "#859900",
+        "python-fg": "#FDF6E3",
+        "accent-1": "#002B36"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "session",
+                    "style": "diamond",
+                    "background": "p:session-bg",
+                    "foreground": "p:session-fg",
+                    "template": "  {{ .UserName }} "
+                },
+                {
+                    "type": "path",
+                    "style": "powerline",
+                    "background": "p:path-bg",
+                    "foreground": "p:path-fg",
+                    "template": " {{ .Path }} "
+                },
+                {
+                    "type": "git",
+                    "style": "powerline",
+                    "background": "p:git-bg",
+                    "foreground": "p:git-fg",
+                    "template": " {{ .HEAD }} "
+                },
+                {
+                    "type": "python",
+                    "style": "powerline",
+                    "background": "p:python-bg",
+                    "foreground": "p:python-fg",
+                    "template": " {{ if .Venv }} {{ .Venv }}{{ end }} "
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "p:accent-1",
+                    "template": "❯ "
+                }
+            ]
+        }
+    ],
+    "final_space": true,
+    "version": 3
+}

@@ -1,0 +1,65 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "session-fg": "#EEE8D5",
+        "session-bg": "#002B36",
+        "accent-1": "#268BD2",
+        "accent-2": "#CB4B16",
+        "accent-3": "#859900"
+    },
+    "blocks": [
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "session",
+                    "style": "plain",
+                    "foreground": "p:accent-1",
+                    "template": " {{ .UserName }}"
+                },
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "template": " | "
+                },
+                {
+                    "type": "path",
+                    "style": "plain",
+                    "foreground": "p:session-fg",
+                    "properties": {
+                        "style": "full"
+                    },
+                    "template": "{{ .Path }}"
+                },
+                {
+                    "type": "git",
+                    "style": "plain",
+                    "foreground": "p:accent-2",
+                    "template": " {{ .HEAD }}"
+                },
+                {
+                    "type": "python",
+                    "style": "plain",
+                    "foreground": "p:accent-3",
+                    "template": "{{ if .Venv }} ( {{ .Venv }}){{ end }}"
+                }
+            ]
+        },
+        {
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "type": "text",
+                    "style": "plain",
+                    "foreground": "p:session-fg",
+                    "template": "❯ "
+                }
+            ]
+        }
+    ],
+    "final_space": true,
+    "version": 3
+}

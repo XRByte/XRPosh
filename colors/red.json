@@ -1,0 +1,18 @@
+{
+   "colors": {
+      "session-bg": "#2D0A0A",
+      "session-fg": "#FEE2E2",
+      "shell-bg": "#5A1C1C",
+      "shell-fg": "#FEE2E2",
+      "path-bg": "#8A2C2C",
+      "path-fg": "#FEE2E2",
+      "git-bg": "#D64545",
+      "git-fg": "#2D0A0A",
+      "python-bg": "#FCA5A5",
+      "python-fg": "#2D0A0A",
+
+      "accent-1": "#FEE2E2",
+      "accent-2": "#FEE2E2",
+      "accent-3": "#FCA5A5"
+   }
+}

@@ -1,0 +1,64 @@
+{
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "palette": {
+        "session-bg": "#073642",
+        "session-fg": "#93A1A1",
+        "path-bg": "#268BD2",
+        "path-fg": "#002B36",
+        "git-bg": "#CB4B16",
+        "git-fg": "#FDF6E3",
+        "python-bg": "#859900",
+        "python-fg": "#FDF6E3"
+    },
+    "blocks": [
+        {
+            "alignment": "left",
+            "type": "prompt",
+            "segments": [
+                {
+                    "type": "session",
+                    "background": "p:session-bg",
+                    "foreground": "p:session-fg",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "style": "diamond",
+                    "template": " {{ .UserName }}"
+                },
+                {
+                    "type": "path",
+                    "background": "p:path-bg",
+                    "foreground": "p:path-fg",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "style": "diamond",
+                    "properties": {
+                        "folder_icon": " ",
+                        "home_icon": " ",
+                        "style": "agnoster"
+                    },
+                    "template": "{{ .Path }}"
+                },
+                {
+                    "type": "git",
+                    "background": "p:git-bg",
+                    "foreground": "p:git-fg",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "style": "diamond",
+                    "template": "{{ .HEAD }}"
+                },
+                {
+                    "type": "python",
+                    "background": "p:python-bg",
+                    "foreground": "p:python-fg",
+                    "leading_diamond": "",
+                    "trailing_diamond": "",
+                    "style": "diamond",
+                    "template": "{{ if .Venv }} {{ .Venv }}{{ end }}"
+                }
+            ]
+        }
+    ],
+    "final_space": true,
+    "version": 3
+}
