@@ -1,7 +1,7 @@
 
 # XRPosh - Oh My Posh Theme & Color Manager
 
-XRPosh is a lightweight command-line utility to **manage [Oh My Posh](https://ohmyposh.dev/) themes and colors** easily which allows you to **switch themes and apply colors dynamically** and **add custom themes and colors** using JSON configuration files.
+XRPosh is a lightweight command-line utility to **manage [Oh My Posh](https://ohmyposh.dev/) themes and colors dynamically** and **add custom themes and colors** using JSON configuration files.
 
 
 ## Requirements
