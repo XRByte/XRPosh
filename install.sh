@@ -26,14 +26,24 @@ SCRIPTS_DIR="${SCRIPT_PATH}/scripts"
 COLORS_DIR="${SCRIPT_PATH}/colors"
 THEMES_DIR="${SCRIPT_PATH}/themes"
 SCHEMA_FILE="${SCRIPT_PATH}/schema.json"
+INSTALLER_DIR="${SCRIPT_PATH}/install/omp_install"
+OS="$(uname)"
 
 # List of items to copy to the config directory
 files=("$SCRIPTS_DIR" "$COLORS_DIR" "$THEMES_DIR" "$SCHEMA_FILE")
 
 # Make sure oh-my-posh is installed
 if ! command -v oh-my-posh &>/dev/null; then
-    echo "You need to install oh-my-posh first"
-    exit 1
+    case "$OS" in
+    *[Ll]inux* | *[Dd]arwin*)
+        if ! bash "$INSTALLER_DIR/unix.sh" "$OS"; then
+            echo "Unable to install oh-my-posh. Please install it manually and rerun the script"
+        fi
+        ;;
+    *)
+        echo "XRPosh cannot be installed on $OS"
+        ;;
+    esac
 fi
 
 # Create the oh-my-posh config folder if it doesn't exist
@@ -58,8 +68,8 @@ done
 source "$OMP_CONFIG_HOME/scripts/set_theme.sh"
 
 # Initialize Oh-My-Posh for the current shell
-eval "$(oh-my-posh init "$CURRENT_SHELL" --config "$OMP_CONFIG_HOME/config.omp.json")" >/dev/null
 xrposh
+eval "$(oh-my-posh init "$CURRENT_SHELL" --config "$OMP_CONFIG_HOME/config.omp.json")" >/dev/null
 
 # Friendly message for the user with manual steps
 cat <<EOF
