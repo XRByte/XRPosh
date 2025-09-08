@@ -4,11 +4,12 @@
 XRPosh is a lightweight command-line utility to **manage [Oh My Posh](https://ohmyposh.dev/) themes and colors dynamically** and **add custom themes and colors** using JSON configuration files.
 
 
-## Requirements
+## Dependencies
 
 - *Python 3* (for color application)
-- [*Oh My Posh*](https://ohmyposh.dev/docs/installation/linux) installed
-- A [Nerd Font](https://www.nerdfonts.com/) installed
+- curl
+- unzip
+- fontconfig
 
 ---
 
@@ -24,7 +25,7 @@ If you are using zsh, run install.sh using
 ```bash
 zsh install.sh
 ```
-Similarly, if you want to install in bash, run install..sh using
+Similarly, if you want to install in bash, run install.sh using
 ```bash
 bash install.sh
 ```
@@ -120,7 +121,7 @@ xrposh --theme maximal --color neutral
 ## Roadmap
 
 Future updates will focus on the following features
-- [ ] Oh my posh installation script if not installed
+- [x] Oh my posh installation script if not installed
 - [ ] Platform agnostic and shell agnostic
 - [ ] Neutral color names
 - [ ] Extend color palette to support more colors
