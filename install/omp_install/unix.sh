@@ -1,5 +1,18 @@
 #!/usr/bin/env bash
 
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#   ▀▄▀ █▀█ █▀█ █▀█ █▀ █░█
+#   █░█ █▀▄ █▀▀ █▄█ ▄█ █▀█
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+#
+#   This script is used to install oh-my-posh in uni based system
+#   like linux and macOS. oh-my-posh is installed at $HOME/.local/bin
+#
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+
+# Declaring required variables
 OMP_INSTALL_DIR="$HOME/.local/bin"
 FONT_DIR="${ZDG_DATA_HOME:-$HOME/.local/share}/fonts"
 CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}"

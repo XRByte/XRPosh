@@ -77,7 +77,7 @@ eval "$(oh-my-posh init "$CURRENT_SHELL" --config "$OMP_CONFIG_HOME/config.omp.j
 cat <<EOF
 You need to add the following lines to your shell configuration file:
 
-    export PATH="$HOME/.local/bin:$PATH"
+    export PATH="\$HOME/.local/bin:\$PATH"
     eval "\$(oh-my-posh init $CURRENT_SHELL --config '$OMP_CONFIG_HOME/config.omp.json')"
     source "$OMP_CONFIG_HOME/scripts/set_theme.sh"
 
