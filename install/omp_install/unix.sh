@@ -32,6 +32,9 @@ case "$1" in
 esac
 
 # Check for nerdfont and install it
+if ! command -v fc-list >/dev/null 2>&1; then
+    echo "You need to install the fontconfig package and re run the script"
+fi
 if ! fc-list | grep -i nerd; then
     check_dir "$CACHE_DIR"
     check_dir "$FONT_DIR"

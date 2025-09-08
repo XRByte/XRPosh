@@ -38,10 +38,12 @@ if ! command -v oh-my-posh &>/dev/null; then
     *[Ll]inux* | *[Dd]arwin*)
         if ! bash "$INSTALLER_DIR/unix.sh" "$OS"; then
             echo "Unable to install oh-my-posh. Please install it manually and rerun the script"
+            exit 1
         fi
         ;;
     *)
         echo "XRPosh cannot be installed on $OS"
+        exit 1
         ;;
     esac
 fi
@@ -75,6 +77,7 @@ eval "$(oh-my-posh init "$CURRENT_SHELL" --config "$OMP_CONFIG_HOME/config.omp.j
 cat <<EOF
 You need to add the following lines to your shell configuration file:
 
+    export PATH="$HOME/.local/bin:$PATH"
     eval "\$(oh-my-posh init $CURRENT_SHELL --config '$OMP_CONFIG_HOME/config.omp.json')"
     source "$OMP_CONFIG_HOME/scripts/set_theme.sh"
 
