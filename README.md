@@ -33,8 +33,8 @@ bash install.sh
 
 ### Supported platforms
 
-|MacOS|Linux|
-|-----|-----|
+|Linux|
+|-----|
 
 ### Supported shells
 Any ***POSIX*** compliant shell
